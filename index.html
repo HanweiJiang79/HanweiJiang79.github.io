@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>瀚纬（蒋椿辉）| 宏业科技技术销售 · 铝加工装备专家</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    @layer utilities {
+      .font-mono-tech {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased min-h-screen selection:bg-cyan-500/30 selection:text-cyan-200">
+  <!-- Top Ambient Glow -->
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-cyan-500/10 via-blue-600/5 to-transparent blur-3xl pointer-events-none -z-10"></div>
+
+  <div class="max-w-6xl mx-auto px-4 py-8 space-y-10">
+    
+    <!-- Hero Profile Section -->
+    <header class="relative rounded-2xl bg-slate-900/80 border border-slate-800 p-6 md:p-8 backdrop-blur-md shadow-2xl overflow-hidden">
+      <div class="absolute -right-16 -top-16 w-64 h-64 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none"></div>
+      
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div class="space-y-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-cyan-950/80 border border-cyan-800 text-cyan-300">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+            镇江市宏业科技有限公司 · 技术销售
+          </div>
+          <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-white flex items-baseline gap-3">
+            瀚纬 <span class="text-xl md:text-2xl font-normal text-slate-400">（蒋椿辉）</span>
+          </h1>
+          <p class="text-slate-300 text-base md:text-lg max-w-2xl leading-relaxed">
+            专注铝板带箔大型加工成套设备技术方案与商务交付。让技术文件严谨务实，把精力投向现场解题与客户共赢。
+          </p>
+        </div>
+
+        <!-- Contact Pill / Card -->
+        <div class="w-full md:w-auto flex-shrink-0 bg-slate-950/70 border border-slate-800/80 rounded-xl p-4 space-y-2.5 text-xs text-slate-300">
+          <div class="text-slate-400 font-semibold uppercase tracking-wider pb-1 border-b border-slate-800/60 flex items-center justify-between gap-4">
+            <span>商务技术直通</span>
+            <span class="text-[11px] text-cyan-400 font-mono">HONGYE TECH</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <span class="text-slate-500">📞 电话:</span>
+            <span class="font-mono text-slate-200 font-medium">133 7614 8268</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <span class="text-slate-500">✉️ 邮箱:</span>
+            <span class="font-mono text-slate-200">jch2003@163.com</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <span class="text-slate-500">📍 基地:</span>
+            <span class="text-slate-300">江苏省镇江市高新区留脉湾路 21 号</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Strip -->
+      <div class="mt-8 pt-6 border-t border-slate-800/80 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="space-y-0.5">
+          <div class="text-xs text-slate-400">服务行业</div>
+          <div class="text-sm font-semibold text-white">国内外铝加工企业</div>
+        </div>
+        <div class="space-y-0.5">
+          <div class="text-xs text-slate-400">装备类型</div>
+          <div class="text-sm font-semibold text-cyan-300">8大成套加工机组</div>
+        </div>
+        <div class="space-y-0.5">
+          <div class="text-xs text-slate-400">协作理念</div>
+          <div class="text-sm font-semibold text-white">数字必溯源 · 结论前置</div>
+        </div>
+        <div class="space-y-0.5">
+          <div class="text-xs text-slate-400">方案交付标准</div>
+          <div class="text-sm font-semibold text-emerald-400">规范模版 · 严禁空话</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Equipment Matrix Section -->
+    <section class="space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <div>
+          <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <span class="w-1.5 h-5 bg-cyan-400 rounded-sm"></span>
+            铝板带箔核心加工装备矩阵
+          </h2>
+          <p class="text-xs text-slate-400 mt-1">涵盖热轧/铸轧前道毛坯制备至精整清洗终道成品全套技术交付</p>
+        </div>
+        <div class="flex items-center gap-1.5 p-1 bg-slate-900 border border-slate-800 rounded-lg text-xs" id="filter-buttons">
+          <button onclick="filterEquip('all')" class="filter-btn active px-3 py-1 rounded font-medium bg-cyan-600 text-white transition">全部 (8)</button>
+          <button onclick="filterEquip('rolling')" class="filter-btn px-3 py-1 rounded text-slate-400 hover:text-white transition">轧制系列</button>
+          <button onclick="filterEquip('finishing')" class="filter-btn px-3 py-1 rounded text-slate-400 hover:text-white transition">精整/后处理</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="equip-grid">
+        <!-- 01 连续铸轧机组 -->
+        <div class="equip-card group rounded-xl bg-slate-900/60 border border-slate-800 p-4 hover:border-cyan-500/50 transition-all duration-300" data-category="rolling">
+          <div class="flex items-center justify-between text-xs text-cyan-400 font-mono mb-2">
+            <span>ROLL-01</span>
+            <span class="px-2 py-0.5 rounded bg-cyan-950/80 border border-cyan-800/60 text-[11px]">轧制设备</span>
+          </div>
+          <h3 class="text-base font-semibold text-white group-hover:text-cyan-300 transition">连续铸轧机组</h3>
+          <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">
+            卧式/倾斜式连续铸轧。熔融铝液直接铸轧成坯卷，低能耗短流程。
+          </p>
+          <div class="mt-3 pt-2.5 border-t border-slate-800/60 text-[11px] font-mono text-slate-400">
+            工程口径：辊身长 = 最大带宽 + 150mm
+          </div>
+        </div>
+
+        <!-- 02 高精度冷轧机组 -->
+        <div class="equip-card group rounded-xl bg-slate-900/60 border border-slate-800 p-4 hover:border-cyan-500/50 transition-all duration-300" data-category="rolling">
+          <div class="flex items-center justify-between text-xs text-cyan-400 font-mono mb-2">
+            <span>ROLL-02</span>
+            <span class="px-2 py-0.5 rounded bg-cyan-950/80 border border-cyan-800/60 text-[11px]">轧制设备</span>
+          </div>
+          <h3 class="text-base font-semibold text-white group-hover:text-cyan-300 transition">高精度冷轧机组</h3>
+          <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">
+            四辊/不可逆/单机架冷轧机。高板型与高厚控精度（AGC/AFC闭环）。
+          </p>
+          <div class="mt-3 pt-2.5 border-t border-slate-800/60 text-[11px] font-mono text-slate-400">
+            支承辊 = 带宽 + 150mm / 工作辊 + 50mm
+          </div>
+        </div>
+
+        <!-- 03 铝箔轧机 -->
+        <div class="equip-card group rounded-xl bg-slate-900/60 border border-slate-800 p-4 hover:border-cyan-500/50 transition-all duration-300" data-category="rolling">
+          <div class="flex items-center justify-between text-xs text-cyan-400 font-mono mb-2">
+            <span>ROLL-03</span>
+            <span class="px-2 py-0.5 rounded bg-cyan-950/80 border border-cyan-800/60 text-[11px]">轧制设备</span>
+          </div>
+          <h3 class="text-base font-semibold text-white group-hover:text-cyan-300 transition">超薄铝箔轧机</h3>
+          <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">
+            粗轧/中轧/精轧双合轧机。针对双零箔、电池铝箔的高速稳定轧制。
+          </p>
+          <div class="mt-3 pt-2.5 border-t border-slate-800/60 text-[11px] font-mono text-slate-400">
+            微米级厚控与高纯度轧制油净化系统
+          </div>
+        </div>
+
+        <!-- 04 热轧机组 -->
+        <div class="equip-card group rounded-xl bg-slate-900/60 border border-slate-800 p-4 hover:border-cyan-500/50 transition-all duration-300" data-category="rolling">
+          <div class="flex items-center justify-between text-xs text-cyan-400 font-mono mb-2">
+            <span>ROLL-04</span>
+            <span class="px-2 py-0.5 rounded bg-cyan-950/80 border border-cyan-800/60 text-[11px]">轧制设备</span>
+          </div>
+          <h3 class="text-base font-semibold text-white group-hover:text-cyan-300 transition">大型热轧机组</h3>
+          <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">
+            1+1 / 1+4 热连轧或单机架双卷取热轧。大压下量与强力咬入系统。
+          </p>
+          <div class="mt-3 pt-2.5 border-t border-slate-800/60 text-[11px] font-mono text-slate-400">
+            重载大扭矩主传动与高温辊面冷却
+          </div>
+        </div>
+
+        <!-- 05 高精度拉弯矫直机 -->
+        <div class="equip-card group rounded-xl bg-slate-900/60 border border-slate-800 p-4 hover:border-cyan-500/50 transition-all duration-300" data-category="finishing">
+          <div class="flex items-center justify-between text-xs text-indigo-400 font-mono mb-2">
+            <span>FIN-01</span>
+            <span class="px-2 py-0.5 rounded bg-indigo-950/80 border border-indigo-800/60 text-[11px]">精整设备</span>
+          </div>
+          <h3 class="text-base font-semibold text-white group-hover:text-indigo-300 transition">拉弯矫直机组</h3>
+          <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">
+            两弯两矫/两弯一矫高张力矫直。彻底消除波浪弯曲与三维板形应力。
+          </p>
+          <div class="mt-3 pt-2.5 border-t border-slate-800/60 text-[11px] font-mono text-slate-400">
+            延伸率数字闭环控制，板形指标 ≤ 1.5 I-Unit
+          </div>
+        </div>
+
+        <!-- 06 精密横切机组 -->
+        <div class="equip-card group rounded-xl bg-slate-900/60 border border-slate-800 p-4 hover:border-cyan-500/50 transition-all duration-300" data-category="finishing">
+          <div class="flex items-center justify-between text-xs text-indigo-400 font-mono mb-2">
+            <span>FIN-02</span>
+            <span class="px-2 py-0.5 rounded bg-indigo-950/80 border border-indigo-800/60 text-[11px]">精整设备</span>
+          </div>
+          <h3 class="text-base font-semibold text-white group-hover:text-indigo-300 transition">精密横切机组</h3>
+          <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">
+            开卷-高精整平-飞剪/停剪-自动码垛。定制化高表面无划伤定尺铝板交付。
+          </p>
+          <div class="mt-3 pt-2.5 border-t border-slate-800/60 text-[11px] font-mono text-slate-400">
+            定尺对角线精度可达 ±0.5mm，气浮式码垛
+          </div>
+        </div>
+
+        <!-- 07 分卷分切重卷机组 -->
+        <div class="equip-card group rounded-xl bg-slate-900/60 border border-slate-800 p-4 hover:border-cyan-500/50 transition-all duration-300" data-category="finishing">
+          <div class="flex items-center justify-between text-xs text-indigo-400 font-mono mb-2">
+            <span>FIN-03</span>
+            <span class="px-2 py-0.5 rounded bg-indigo-950/80 border border-indigo-800/60 text-[11px]">精整设备</span>
+          </div>
+          <h3 class="text-base font-semibold text-white group-hover:text-indigo-300 transition">分卷 / 分切 / 重卷机</h3>
+          <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">
+            重卷分条与修边机组。配备高精剪刃、错位卷取与自动端面纠偏(EPC)。
+          </p>
+          <div class="mt-3 pt-2.5 border-t border-slate-800/60 text-[11px] font-mono text-slate-400">
+            毛刺高度控制 ≤ 0.02mm，端面齐整度 ≤ 0.5mm
+          </div>
+        </div>
+
+        <!-- 08 连续脱脂清洗线 -->
+        <div class="equip-card group rounded-xl bg-slate-900/60 border border-slate-800 p-4 hover:border-cyan-500/50 transition-all duration-300" data-category="finishing">
+          <div class="flex items-center justify-between text-xs text-indigo-400 font-mono mb-2">
+            <span>FIN-04</span>
+            <span class="px-2 py-0.5 rounded bg-indigo-950/80 border border-indigo-800/60 text-[11px]">精整设备</span>
+          </div>
+          <h3 class="text-base font-semibold text-white group-hover:text-indigo-300 transition">连续脱脂清洗线</h3>
+          <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">
+            化学碱洗-水刷洗-钝化-热风烘干。彻底去除残留轧制油与金属粉屑。
+          </p>
+          <div class="mt-3 pt-2.5 border-t border-slate-800/60 text-[11px] font-mono text-slate-400">
+            表面张力达到 32~36 达因/厘米，水质自动循环回收
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Two Columns: Iron Rules & Technical Calculator -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Left Column: The 5 Iron Rules (7 Cols) -->
+      <div class="lg:col-span-7 space-y-4">
+        <div>
+          <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <span class="w-1.5 h-5 bg-amber-400 rounded-sm"></span>
+            任何输出前的五条铁律
+          </h2>
+          <p class="text-xs text-slate-400 mt-1">工作底线与交付契约（冲突时以此五条为准）</p>
+        </div>
+
+        <div class="space-y-3">
+          <div class="rounded-xl bg-slate-900/70 border border-slate-800 p-4 relative overflow-hidden">
+            <div class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-md bg-amber-500/20 text-amber-400 font-mono font-bold text-xs flex items-center justify-center">01</span>
+              <div>
+                <h4 class="text-sm font-semibold text-slate-100">禁止空话，数字要有出处</h4>
+                <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+                  数字必须有出处（合同号/国标/历史项目/客户来函）。不知道就明确标注“待瀚纬确认”，坚决不编造。“高精度”“工艺先进”等形容词直接精简。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-slate-900/70 border border-slate-800 p-4 relative overflow-hidden">
+            <div class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-md bg-amber-500/20 text-amber-400 font-mono font-bold text-xs flex items-center justify-center">02</span>
+              <div>
+                <h4 class="text-sm font-semibold text-slate-100">不替我越级承诺</h4>
+                <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+                  交期/价格/付款方式/技术让步一律标“建议草案，需瀚纬拍板”。问 A 答 A，不顺嘴加塞额外未授权承诺。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-slate-900/70 border border-slate-800 p-4 relative overflow-hidden">
+            <div class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-md bg-amber-500/20 text-amber-400 font-mono font-bold text-xs flex items-center justify-center">03</span>
+              <div>
+                <h4 class="text-sm font-semibold text-slate-100">只改该改的</h4>
+                <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+                  客户让填哪列只动哪列；技术文件红改只标改动处、不动其余文字，不做未要求的排版变动与自设格式。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-slate-900/70 border border-slate-800 p-4 relative overflow-hidden">
+            <div class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-md bg-amber-500/20 text-amber-400 font-mono font-bold text-xs flex items-center justify-center">04</span>
+              <div>
+                <h4 class="text-sm font-semibold text-slate-100">主动挑错报风险</h4>
+                <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+                  发现模版参数前后矛盾、业绩用错设备、报价漏项、数据异常等隐患，必须主动指出并提供影响判断，防患于未然。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-slate-900/70 border border-slate-800 p-4 relative overflow-hidden">
+            <div class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-md bg-amber-500/20 text-amber-400 font-mono font-bold text-xs flex items-center justify-center">05</span>
+              <div>
+                <h4 class="text-sm font-semibold text-slate-100">结论前置，末尾给“下一步动作”</h4>
+                <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+                  核心结论放首句。每项文件或沟通末尾明确：<strong class="text-slate-300">做什么 / 责任人 / 耗时 / 完成判定</strong>，确保工作闭环。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Spec Calculator & Business Nodes (5 Cols) -->
+      <div class="lg:col-span-5 space-y-6">
+        
+        <!-- Interactive Formula Calculator -->
+        <div class="rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-5 shadow-lg">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+            <h3 class="text-sm font-semibold text-white flex items-center gap-2">
+              <span class="text-cyan-400 font-mono font-bold">∑</span> 宏业工程参数速算器
+            </h3>
+            <span class="text-[10px] bg-slate-800 text-slate-400 px-2 py-0.5 rounded font-mono">公式算法源自口径</span>
+          </div>
+
+          <div class="mt-4 space-y-3.5">
+            <div>
+              <label class="block text-xs text-slate-400 mb-1.5">输入客户要求：最大带材宽度 (mm)</label>
+              <div class="relative">
+                <input type="number" id="stripWidth" value="1850" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-sm text-cyan-300 font-mono focus:outline-none focus:border-cyan-500 transition" placeholder="例如: 1850">
+                <span class="absolute right-3 top-2 text-xs text-slate-500 font-mono">mm</span>
+              </div>
+            </div>
+
+            <!-- Derived Calculation Results -->
+            <div class="space-y-2 pt-2 text-xs">
+              <div class="bg-slate-900/80 p-2.5 rounded-lg border border-slate-800/80 flex items-center justify-between">
+                <span class="text-slate-400">铸轧机辊身长 (+150mm):</span>
+                <span class="font-mono text-cyan-300 font-semibold" id="res-cast">-</span>
+              </div>
+              <div class="bg-slate-900/80 p-2.5 rounded-lg border border-slate-800/80 flex items-center justify-between">
+                <span class="text-slate-400">冷轧机支承辊 (+150mm):</span>
+                <span class="font-mono text-cyan-300 font-semibold" id="res-back">-</span>
+              </div>
+              <div class="bg-slate-900/80 p-2.5 rounded-lg border border-slate-800/80 flex items-center justify-between">
+                <span class="text-slate-400">冷轧机工作辊 (支承辊+50mm):</span>
+                <span class="font-mono text-cyan-300 font-semibold" id="res-work">-</span>
+              </div>
+              <div class="bg-slate-900/80 p-2.5 rounded-lg border border-slate-800/80 flex items-center justify-between">
+                <span class="text-slate-400">冷轧机型号代号:</span>
+                <span class="font-mono text-emerald-400 font-semibold" id="res-model">-</span>
+              </div>
+            </div>
+
+            <p class="text-[11px] text-slate-500 italic">
+              * 验算逻辑：冷轧机型代号即为支承辊辊身长；派生功率、轧制力等需由宏业技术部力学验算核定。
+            </p>
+          </div>
+        </div>
+
+        <!-- Business Standard Payment Nodes -->
+        <div class="rounded-2xl bg-slate-900/60 border border-slate-800 p-5">
+          <h3 class="text-sm font-semibold text-white mb-3 flex items-center gap-2">
+            <span class="text-emerald-400">¥</span> 商务标准付款与交付节点
+          </h3>
+          <div class="space-y-2 text-xs">
+            <div class="flex items-center justify-between p-2 rounded bg-slate-950/60 border border-slate-800/60">
+              <span class="text-slate-300">① 合同生效预付款</span>
+              <span class="font-mono text-emerald-400 font-semibold">30%</span>
+            </div>
+            <div class="flex items-center justify-between p-2 rounded bg-slate-950/60 border border-slate-800/60">
+              <span class="text-slate-300">② 设计联络图纸签字确认</span>
+              <span class="font-mono text-emerald-400 font-semibold">20%</span>
+            </div>
+            <div class="flex items-center justify-between p-2 rounded bg-slate-950/60 border border-slate-800/60">
+              <span class="text-slate-300">③ 设备制造完成发货前（开全额发票）</span>
+              <span class="font-mono text-emerald-400 font-semibold">35%</span>
+            </div>
+            <div class="flex items-center justify-between p-2 rounded bg-slate-950/60 border border-slate-800/60">
+              <span class="text-slate-300">④ 现场带料调试合格终验收</span>
+              <span class="font-mono text-emerald-400 font-semibold">10%</span>
+            </div>
+            <div class="flex items-center justify-between p-2 rounded bg-slate-950/60 border border-slate-800/60">
+              <span class="text-slate-300">⑤ 质保期满（12个月）</span>
+              <span class="font-mono text-emerald-400 font-semibold">5%</span>
+            </div>
+          </div>
+          <div class="mt-3 text-[11px] text-slate-500 font-mono">
+            标准命名：YYYYMMDD-客户简称-设备型号-文件类型-HONGYE
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer Note -->
+    <footer class="pt-6 border-t border-slate-800/80 text-center text-xs text-slate-500 space-y-1">
+      <div>镇江市宏业科技有限公司 · 蒋椿辉（瀚纬）技术销售服务数字档案</div>
+      <div class="font-mono text-[11px] text-slate-600">建议草案 · 最终技术与商务条款需瀚纬拍板</div>
+    </footer>
+
+  </div>
+
+  <script>
+    // Calculation logic based on Hongye engineering standards
+    function calcSpec() {
+      const wInput = document.getElementById('stripWidth');
+      const w = parseFloat(wInput.value) || 0;
+      
+      const cast = w + 150;
+      const back = w + 150;
+      const work = back + 50;
+      const model = 'HY-C' + back;
+
+      document.getElementById('res-cast').textContent = cast > 150 ? cast + ' mm' : '-';
+      document.getElementById('res-back').textContent = back > 150 ? back + ' mm' : '-';
+      document.getElementById('res-work').textContent = work > 200 ? work + ' mm' : '-';
+      document.getElementById('res-model').textContent = back > 150 ? model : '-';
+    }
+
+    document.getElementById('stripWidth').addEventListener('input', calcSpec);
+    calcSpec();
+
+    // Equipment filter logic
+    function filterEquip(cat) {
+      const cards = document.querySelectorAll('.equip-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+      
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-cyan-600', 'text-white');
+        btn.classList.add('text-slate-400');
+      });
+      event.target.classList.add('bg-cyan-600', 'text-white');
+      event.target.classList.remove('text-slate-400');
+
+      cards.forEach(card => {
+        if (cat === 'all' || card.dataset.category === cat) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
